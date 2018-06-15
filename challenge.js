@@ -1,3 +1,5 @@
+let fragment = document.createDocumentFragment();
+
 const peopleDatabase = []
 const person = Object.create({}, {
     advisorName: {
@@ -18,7 +20,7 @@ const person = Object.create({}, {
 
 })
 
-const personCreate = (advisor,company,specialty) => {
+const personCreate = (advisor, company, specialty) => {
     const people = Object.create(person)
 
     person.advisorName = advisor
@@ -28,7 +30,7 @@ const personCreate = (advisor,company,specialty) => {
 }
 
 
-personCreate('Isaac Brooks','Apple Company','apples')
+personCreate('Isaac Brooks', 'Apple Company', 'apples')
 
 
 console.log(peopleDatabase)
@@ -36,12 +38,17 @@ console.log(peopleDatabase)
 for (let x = 0; x < peopleDatabase.length; x++) {
     const element = peopleDatabase[x];
     console.log(element)
-    
-    const newSection = document.createElement("p")
-const newStatement = document.createTextNode(element);
-newSection.appendChild(newStatement);
-document.body.appendChild(newSection);
 
-console.log(newStatement)
+
+    const newSection = document.createElement("p")
+    const newStatement = document.createTextNode(element.advisorName);
+    newSection.appendChild(newStatement);
+    document.body.appendChild(newSection);
+    console.log(newStatement)
 }
+
+
+
+
+
 
